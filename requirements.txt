@@ -1,0 +1,9 @@
+opencv-python
+face_recognition
+psycopg2-binary
+numpy
+mediapipe
+ultralytics
+pywhatkit
+twilio
+python-dotenv

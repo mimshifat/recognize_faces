@@ -1,0 +1,30 @@
+# Environment variables
+.env
+
+# Python compilation and caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE and Editor settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific ignores
+alert_snapshots/
+*.pt
+PyWhatKit_DB.txt
+*.png
+*.jpg
+*.jpeg
+
+# Logs
+*.log
