@@ -1,6 +1,15 @@
-# 🔍 Real-Time Face Recognition System
+# 🔍 Real-Time Face Recognition & Security Alert System
 
-A high-speed face recognition system powered by **OpenCV**, **face_recognition (dlib)**, and **PostgreSQL**.
+A high-speed security system powered by **OpenCV**, **face_recognition (dlib)**, **YOLOv8** (Weapon Detection), and **PostgreSQL**, with automated WhatsApp alerts.
+
+---
+
+## ✨ Features
+- **Real-Time Face Recognition**: High-speed matching using `dlib` and PostgreSQL.
+- **Weapon Detection**: YOLOv8 integration to detect threats (e.g., guns, knives).
+- **Automated WhatsApp Alerts**: Instant background alerts via CallMeBot API with suspect details and threat level.
+- **Professional UI Overlay**: Futuristic HUD with profile cards, threat banners, and status tracking.
+- **Secure Configuration**: Environment variables for sensitive keys and credentials.
 
 ---
 
@@ -79,9 +88,9 @@ psql -U postgres -c "CREATE DATABASE face_recognition_db;"
 psql -U postgres -d face_recognition_db -f schema.sql
 ```
 
-### 4. Update Database Credentials
+### 4. Setup Database and WhatsApp Credentials
 
-Create a `.env` file in the root directory and add your database and WhatsApp API credentials:
+Create a `.env` file in the root directory and add your database and API credentials:
 
 ```env
 DB_HOST=localhost
@@ -93,6 +102,11 @@ DB_PASSWORD=your_password_here
 ALERT_PHONE_NUMBER=+1234567890
 CALLMEBOT_API_KEY=your_api_key_here
 ```
+
+**How to get your CallMeBot API Key:**
+1. Add the phone number `+34 624 54 81 55` to your contacts.
+2. Send the message `"I allow callmebot to send me messages"` to that number via WhatsApp.
+3. The bot will reply with your API Key. Paste it into your `.env` file!
 
 ---
 
@@ -186,5 +200,5 @@ python recognize_faces.py
 | `dlib` won't install | Install CMake + Visual Studio C++ Build Tools |
 | No face detected | Use a clear, well-lit photo with one visible face |
 | Webcam not opening | Check if another app is using the camera |
-| DB connection error | Verify credentials in `db_config.py` and ensure PostgreSQL is running |
+| DB connection error | Verify credentials in your `.env` file and ensure PostgreSQL is running |
 | Low FPS | Decrease `RESIZE_FACTOR` or increase `PROCESS_EVERY_N_FRAMES` in `recognize_faces.py` |
