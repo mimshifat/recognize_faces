@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
+
 # Create the snapshots directory immediately
 SNAPSHOT_DIR = os.path.join(os.path.dirname(__file__), "alert_snapshots")
 os.makedirs(SNAPSHOT_DIR, exist_ok=True)
